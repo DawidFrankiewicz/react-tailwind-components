@@ -7,7 +7,8 @@ export default function componentDetails() {
 			id: 1,
 			name: 'Button',
 			thumbnail: 'https://i.imgur.com/4Q4Q4Q4.png',
-			description: 'Button component'
+			description: 'Button component',
+			code: 'const [firstEffect, setFirstEffect] = useState(true);'
 		},
 		{
 			id: 2,
@@ -53,6 +54,12 @@ export default function componentDetails() {
 				<span className="font-thin text-gray-900">
 					{componentData.description}
 				</span>
+			</p>
+			<p>
+				<p>CODE CONTENT:</p>
+				<code className="bg-blue-50 p-2 rounded-lg ">
+					{componentsData[0].code}
+				</code>
 			</p>
 		</div>
 	);
