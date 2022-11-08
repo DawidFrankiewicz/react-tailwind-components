@@ -18,7 +18,7 @@ function Footer() {
 					/>
 					Project
 				</a>
-				<ul>
+				<ul className="text-right">
 					© 2022 Copyright | Creators
 					<li>
 						<a
