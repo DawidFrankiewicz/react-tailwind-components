@@ -6,7 +6,7 @@ function Footer() {
 		<footer className="bg-gray-800 text-white text-center py-4">
 			<div className="container mx-auto">
 				<ul>
-					© 2022 Copyright Creators:
+					© 2022 Copyright | Creators:
 					<li>
 						<a
 							href="https://github.com/DawidFrankiewicz"
