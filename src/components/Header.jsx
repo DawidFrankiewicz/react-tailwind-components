@@ -1,7 +1,7 @@
 import React from 'react';
 import reactLogo from '../assets/react.svg';
 
-function App() {
+function Header() {
 	return (
 		<header className="flex items-center justify-between p-4 gap-4 rounded-b-lg shadow-md">
 			<div>
@@ -24,4 +24,4 @@ function App() {
 	);
 }
 
-export default App;
+export default Header;
