@@ -1,3 +1,4 @@
+import NotFound from './pages/NotFound.jsx';
 import Home from './pages/Home.jsx';
 import ComponentDetails from './pages/ComponentDetails.jsx';
 
@@ -8,6 +9,7 @@ function App() {
 		<Routes>
 			<Route path="/" element={<Home />} />
 			<Route path="/component/:id" element={<ComponentDetails />} />
+			<Route path="*" element={<NotFound />} />
 		</Routes>
 	);
 }

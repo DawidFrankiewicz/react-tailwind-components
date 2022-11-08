@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-export default function componentDetails() {
+export default function componentDetailsDisplay() {
 	const [componentData, setComponentData] = useState({});
 	const [componentsData, setComponentsData] = useState([
 		{
@@ -38,8 +38,11 @@ export default function componentDetails() {
 
 	useEffect(() => {
 		const component = componentsData.find(
-			(component) => component.id === parseInt(id)
+			(component) => component.id == id
 		);
+		// Not found error handling
+		if (!component) return (window.location.href = '/NotFound');
+
 		setComponentData(component);
 	}, []);
 

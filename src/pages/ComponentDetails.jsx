@@ -1,9 +1,9 @@
-import ComponentDetails from '../components/ComponentDetails.jsx';
+import ComponentDetailsDisplay from '../components/ComponentDetailsDisplay.jsx';
 
 export default function componentDetails() {
 	return (
 		<div className="container mx-auto">
-			<ComponentDetails />
+			<ComponentDetailsDisplay />
 		</div>
 	);
 }
