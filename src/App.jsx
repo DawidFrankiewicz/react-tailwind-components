@@ -1,17 +1,12 @@
-import Header from './components/Header.jsx';
-import ComponentsGrid from './components/ComponentsGrid.jsx';
-import Footer from './components/Footer.jsx';
-import ComponentDetails from './components/ComponentDetails.jsx';
+import Home from './pages/Home.jsx';
+
+import { Route, Routes } from 'react-router-dom';
+
 function App() {
 	return (
-		<div className="App">
-			<div className="container mx-auto px-2">
-				<Header />
-				<ComponentsGrid />
-				<ComponentDetails />
-			</div>
-			<Footer />
-		</div>
+		<Routes>
+			<Route path="/" element={<Home />} />
+		</Routes>
 	);
 }
 
