@@ -30,7 +30,7 @@ function ComponentsGrid() {
 	]);
 
 	const openComponentRoute = (path) => {
-		console.log(path);
+		window.location.href = path;
 	};
 
 	return (
