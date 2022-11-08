@@ -3,14 +3,29 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 function Footer() {
 	return (
-		<footer className="bg-gray-800 text-white text-center py-4 mt-20">
-			<div className="container mx-auto">
+		<footer className="bg-gray-800 text-white py-4 mt-20">
+			<div className="container mx-auto flex items-center justify-between">
+				<a
+					href="https://github.com/DawidFrankiewicz/react-tailwind-components"
+					target="_blank"
+					className="hover:text-react-blue inline-flex items-center text-2xl font-bold"
+					rel="noreferrer"
+				>
+					<FontAwesomeIcon
+						icon={faGithub}
+						size="4x"
+						className="mr-5"
+					/>
+					Project
+				</a>
 				<ul>
-					© 2022 Copyright | Creators:
+					© 2022 Copyright | Creators
 					<li>
 						<a
 							href="https://github.com/DawidFrankiewicz"
-							className="hover:text-emerald-300"
+							target="_blank"
+							className="hover:text-react-blue"
+							rel="noreferrer"
 						>
 							<FontAwesomeIcon icon={faGithub} className="mr-2" />
 							Dawid Frankiewicz
@@ -19,7 +34,9 @@ function Footer() {
 					<li>
 						<a
 							href="https://github.com/Mefiasty"
-							className="hover:text-emerald-300"
+							target="_blank"
+							className="hover:text-react-blue"
+							rel="noreferrer"
 						>
 							<FontAwesomeIcon icon={faGithub} className="mr-2" />
 							Mateusz Harbuz
