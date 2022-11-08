@@ -4,33 +4,33 @@ function ComponentsGrid() {
 	// components data array
 	const [componentsData, setComponentsData] = useState([
 		{
+			id: 1,
 			name: 'Button',
 			thumbnail: 'https://i.imgur.com/4Q4Q4Q4.png',
-			description: 'Button component',
-			path: '/button'
+			description: 'Button component'
 		},
 		{
+			id: 2,
 			name: 'Card',
 			thumbnail: 'https://i.imgur.com/4Q4QZ0M.png',
-			description: 'Card component',
-			path: '/card'
+			description: 'Card component'
 		},
 		{
+			id: 3,
 			name: 'Input',
 			thumbnail: 'https://i.imgur.com/4Q4QZ0M.png',
-			description: 'Input component',
-			path: '/input'
+			description: 'Input component'
 		},
 		{
+			id: 4,
 			name: 'Navbar',
 			thumbnail: 'https://i.imgur.com/4Q4QZ0M.png',
-			description: 'Navbar component',
-			path: '/navbar'
+			description: 'Navbar component'
 		}
 	]);
 
-	const openComponentRoute = (path) => {
-		window.location.href = path;
+	const openComponentRoute = (id) => {
+		window.location.href = '/component/' + id;
 	};
 
 	return (
@@ -39,7 +39,7 @@ function ComponentsGrid() {
 				<div
 					key={index}
 					className="group cursor-pointer"
-					onClick={() => openComponentRoute(component.path)}
+					onClick={() => openComponentRoute(component.id)}
 				>
 					<div className="bg-slate-300 rounded-t-lg h-64">
 						<img

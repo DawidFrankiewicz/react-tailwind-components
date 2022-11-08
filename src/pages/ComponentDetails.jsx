@@ -2,28 +2,28 @@ import { useState } from 'react';
 export default function componentDetails() {
 	const [componentsData, setComponentsData] = useState([
 		{
+			id: 1,
 			name: 'Button',
 			thumbnail: 'https://i.imgur.com/4Q4Q4Q4.png',
-			description: 'Button component',
-			path: '/button'
+			description: 'Button component'
 		},
 		{
+			id: 2,
 			name: 'Card',
 			thumbnail: 'https://i.imgur.com/4Q4QZ0M.png',
-			description: 'Card component',
-			path: '/card'
+			description: 'Card component'
 		},
 		{
+			id: 3,
 			name: 'Input',
 			thumbnail: 'https://i.imgur.com/4Q4QZ0M.png',
-			description: 'Input component',
-			path: '/input'
+			description: 'Input component'
 		},
 		{
+			id: 4,
 			name: 'Navbar',
 			thumbnail: 'https://i.imgur.com/4Q4QZ0M.png',
-			description: 'Navbar component',
-			path: '/navbar'
+			description: 'Navbar component'
 		}
 	]);
 	return (
