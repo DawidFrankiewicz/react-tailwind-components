@@ -56,7 +56,7 @@ export default function componentDetails() {
 				</span>
 			</p>
 			<p>
-				<p>CODE CONTENT:</p>
+				<span>CODE CONTENT:</span>
 				<code className="bg-blue-50 p-2 rounded-lg ">
 					{componentsData.code}
 				</code>
