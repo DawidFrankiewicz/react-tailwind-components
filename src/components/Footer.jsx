@@ -10,7 +10,7 @@ function Footer() {
 					<li>
 						<a
 							href="https://github.com/DawidFrankiewicz"
-							className="hover:text-emerald-300"
+							className="hover:text-emerald-300 text-react-blue"
 						>
 							<FontAwesomeIcon icon={faGithub} className="mr-2" />
 							Dawid Frankiewicz
