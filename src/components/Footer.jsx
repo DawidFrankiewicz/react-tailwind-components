@@ -4,7 +4,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 function Footer() {
 	return (
 		<footer className="bg-gray-800 text-white py-4 mt-20">
-			<div className="container mx-auto flex items-center justify-between">
+			<div className="container mx-auto px-2 flex gap-3 flex-col sm:flex-row items-center justify-center sm:justify-between">
 				<a
 					href="https://github.com/DawidFrankiewicz/react-tailwind-components"
 					target="_blank"
@@ -18,7 +18,7 @@ function Footer() {
 					/>
 					Project
 				</a>
-				<ul className="text-right">
+				<ul className="text-center sm:text-right">
 					© 2022 Copyright | Creators
 					<li>
 						<a

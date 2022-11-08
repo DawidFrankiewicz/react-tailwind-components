@@ -5,7 +5,7 @@ import Footer from './components/Footer.jsx';
 function App() {
 	return (
 		<div className="App">
-			<div className="container mx-auto">
+			<div className="container mx-auto px-2">
 				<Header />
 				<ComponentsGrid />
 			</div>
