@@ -26,23 +26,29 @@ export default function componentDetails() {
 			description: 'Navbar component'
 		}
 	]);
+
+	// get the id from the url
+	const id = window.location.href.split('/').pop();
+
 	return (
 		<div>
-			<h1 className="font-bold text-red-600">{componentsData[0].name}</h1>
+			<h1 className="font-bold text-red-600">
+				{componentsData[id].name}
+			</h1>
 			<img
-				src={componentsData[0].thumbnail}
-				alt={componentsData[0].name}
+				src={componentsData[id].thumbnail}
+				alt={componentsData[id].name}
 			></img>
 			<p className="font-bold text-blue-600">
 				Description:
 				<span className="font-thin text-gray-900">
-					{componentsData[0].description}
+					{componentsData[id].description}
 				</span>
 			</p>
 			<p className="font-bold text-blue-600">
 				Path:
 				<span className="font-thin text-gray-900">
-					{componentsData[0].path}
+					{componentsData[id].path}
 				</span>
 			</p>
 		</div>
