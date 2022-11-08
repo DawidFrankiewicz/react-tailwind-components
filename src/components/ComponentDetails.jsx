@@ -58,7 +58,7 @@ export default function componentDetails() {
 			<p>
 				<p>CODE CONTENT:</p>
 				<code className="bg-blue-50 p-2 rounded-lg ">
-					{componentsData[0].code}
+					{componentsData.code}
 				</code>
 			</p>
 		</div>
