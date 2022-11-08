@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 export default function componentDetails() {
-	const [firstEffect, setFirstEffect] = useState(true);
 	const [componentData, setComponentData] = useState({});
 	const [componentsData, setComponentsData] = useState([
 		{
@@ -38,17 +37,10 @@ export default function componentDetails() {
 	const { id } = useParams();
 
 	useEffect(() => {
-		if (firstEffect) {
-			const component = componentsData.find(
-				(component) => component.id === parseInt(id)
-			);
-			setComponentData(component);
-			console.log('test');
-
-			setFirstEffect(false);
-		} else {
-			console.log('test2');
-		}
+		const component = componentsData.find(
+			(component) => component.id === parseInt(id)
+		);
+		setComponentData(component);
 	}, []);
 
 	return (
