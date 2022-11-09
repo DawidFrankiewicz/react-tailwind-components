@@ -5,6 +5,12 @@ module.exports = {
 		extend: {
 			colors: {
 				'react-blue': '#00d8ff'
+			},
+			borderWidth: {
+				1: '1px'
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))'
 			}
 		}
 	},

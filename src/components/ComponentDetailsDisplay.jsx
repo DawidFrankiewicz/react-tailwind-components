@@ -7,28 +7,28 @@ export default function componentDetailsDisplay() {
 		{
 			id: 1,
 			name: 'Button',
-			thumbnail: 'https://i.imgur.com/4Q4Q4Q4.png',
+			thumbnail: '/img/D&M.webp',
 			description: 'Button component',
 			code: 'const [firstEffect, setFirstEffect] = useState(true);'
 		},
 		{
 			id: 2,
 			name: 'Card',
-			thumbnail: 'https://i.imgur.com/4Q4QZ0M.png',
+			thumbnail: '/img/D&M.webp',
 			description: 'Card component',
 			code: 'const [firstEffect, setFirstEffect] = useState(true);'
 		},
 		{
 			id: 3,
 			name: 'Input',
-			thumbnail: 'https://i.imgur.com/4Q4QZ0M.png',
+			thumbnail: '/img/D&M.webp',
 			description: 'Input component',
 			code: 'const [firstEffect, setFirstEffect] = useState(true);'
 		},
 		{
 			id: 4,
 			name: 'Navbar',
-			thumbnail: 'https://i.imgur.com/4Q4QZ0M.png',
+			thumbnail: '/img/D&M.webp',
 			description: 'Navbar component',
 			code: 'const [firstEffect, setFirstEffect] = useState(true);'
 		}
@@ -49,7 +49,10 @@ export default function componentDetailsDisplay() {
 	return (
 		<div id={componentData.id}>
 			<h1 className="font-bold text-red-600">{componentData.name}</h1>
-			<img src={componentData.thumbnail} alt={componentData.name}></img>
+			<img
+				src={window.location.origin + componentData.thumbnail}
+				alt={componentData.name}
+			></img>
 			<p className="font-bold text-blue-600">
 				Description:
 				<span className="font-thin text-gray-900">

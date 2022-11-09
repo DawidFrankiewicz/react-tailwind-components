@@ -6,25 +6,25 @@ function ComponentsGrid() {
 		{
 			id: 1,
 			name: 'Button',
-			thumbnail: 'https://i.imgur.com/4Q4Q4Q4.png',
+			thumbnail: '/img/D&M.webp',
 			description: 'Button component'
 		},
 		{
 			id: 2,
 			name: 'Card',
-			thumbnail: 'https://i.imgur.com/4Q4QZ0M.png',
+			thumbnail: '/img/D&M.webp',
 			description: 'Card component'
 		},
 		{
 			id: 3,
 			name: 'Input',
-			thumbnail: 'https://i.imgur.com/4Q4QZ0M.png',
+			thumbnail: '/img/D&M.webp',
 			description: 'Input component'
 		},
 		{
 			id: 4,
 			name: 'Navbar',
-			thumbnail: 'https://i.imgur.com/4Q4QZ0M.png',
+			thumbnail: '/img/D&M.webp',
 			description: 'Navbar component'
 		}
 	]);
@@ -38,14 +38,14 @@ function ComponentsGrid() {
 			{componentsData.map((component, index) => (
 				<div
 					key={index}
-					className="group cursor-pointer"
+					className="group cursor-pointer relative border-2 border-transparent before:rounded-lg before:p-[2px] before:special-border before:special-border-gradient"
 					onClick={() => openComponentRoute(component.id)}
 				>
-					<div className="bg-slate-300 rounded-t-lg h-64">
+					<div className="bg-slate-300 rounded-t-lg">
 						<img
 							src={component.thumbnail}
 							alt={component.name}
-							className="w-full h-full object-cover rounded-t-lg"
+							className="aspect-video object-cover rounded-t-lg"
 						/>
 					</div>
 					<div className=" rounded-b-lg shadow-lg p-3">
