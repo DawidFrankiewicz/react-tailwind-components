@@ -1,33 +1,15 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { getComponentsData } from '../database/mongodb.js';
 
 function ComponentsGrid() {
 	// components data array
-	const [componentsData, setComponentsData] = useState([
-		{
-			id: 1,
-			name: 'Button',
-			thumbnail: '/img/D&M.webp',
-			description: 'Button component'
-		},
-		{
-			id: 2,
-			name: 'Card',
-			thumbnail: '/img/D&M.webp',
-			description: 'Card component'
-		},
-		{
-			id: 3,
-			name: 'Input',
-			thumbnail: '/img/D&M.webp',
-			description: 'Input component'
-		},
-		{
-			id: 4,
-			name: 'Navbar',
-			thumbnail: '/img/D&M.webp',
-			description: 'Navbar component'
-		}
-	]);
+	const [componentsData, setComponentsData] = useState([]);
+
+	useEffect(() => {
+		getComponentsData().then((data) => {
+			setComponentsData(data);
+		});
+	}, []);
 
 	const openComponentRoute = (id) => {
 		window.location.href = '/component/' + id;
@@ -39,7 +21,7 @@ function ComponentsGrid() {
 				<div
 					key={index}
 					className="group cursor-pointer relative border-2 border-transparent before:rounded-lg before:p-[2px] before:special-border before:special-border-gradient"
-					onClick={() => openComponentRoute(component.id)}
+					onClick={() => openComponentRoute(component._id.valueOf())}
 				>
 					<div className="bg-slate-300 rounded-t-lg">
 						<img

@@ -1,53 +1,26 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { getComponentsData } from '../database/mongodb.js';
 
 export default function componentDetailsDisplay() {
 	const [componentData, setComponentData] = useState({});
-	const [componentsData, setComponentsData] = useState([
-		{
-			id: 1,
-			name: 'Button',
-			thumbnail: '/img/D&M.webp',
-			description: 'Button component',
-			code: 'const [firstEffect, setFirstEffect] = useState(true);'
-		},
-		{
-			id: 2,
-			name: 'Card',
-			thumbnail: '/img/D&M.webp',
-			description: 'Card component',
-			code: 'const [firstEffect, setFirstEffect] = useState(true);'
-		},
-		{
-			id: 3,
-			name: 'Input',
-			thumbnail: '/img/D&M.webp',
-			description: 'Input component',
-			code: 'const [firstEffect, setFirstEffect] = useState(true);'
-		},
-		{
-			id: 4,
-			name: 'Navbar',
-			thumbnail: '/img/D&M.webp',
-			description: 'Navbar component',
-			code: 'const [firstEffect, setFirstEffect] = useState(true);'
-		}
-	]);
+	// TODO pass data from ComponentsGrid.jsx to ComponentDetails.jsx via router, still load from db if no data passed
 
 	const { id } = useParams();
-
 	useEffect(() => {
-		const component = componentsData.find(
-			(component) => component.id == id
-		);
-		// Not found error handling
-		if (!component) return (window.location.href = '/NotFound');
-
-		setComponentData(component);
+		getComponentsData().then((data) => {
+			const component = data.find((component) => {
+				let componentId = component._id.valueOf();
+				return componentId == id;
+			});
+			// Not found error handling
+			if (!component) return (window.location.href = '/NotFound');
+			setComponentData(component);
+		});
 	}, []);
 
 	return (
-		<div id={componentData.id}>
+		<div>
 			<h1 className="font-bold text-red-600">{componentData.name}</h1>
 			<img
 				src={window.location.origin + componentData.thumbnail}
