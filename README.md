@@ -5,6 +5,6 @@ This is a collection of React components that are styled with TailwindCSS.
 Node version: 19.0.0
 
 ## Site uses:
- - Node server
+ - Node server - [README](./node_server/README.md)
  - MongoDB
- - React client
+ - React client - [README](./web/README.md)
