@@ -10,7 +10,7 @@
   "name": "Button",
   "thumbnail": "/img/D&M.webp",
   "description": "Button Component description",
-  "code_path": "/public/compoments_code/button/Button.jsx"
+  "code_path": "/public/components_code/button/Button.jsx"
 },{
   "_id": {
     "$oid": "636c3f125f2c95c273e877cc"
@@ -23,7 +23,7 @@
   "name": "Input",
   "thumbnail": "/img/D&M.webp",
   "description": "Input Component description",
-  "code_path": "/public/compoments_code/input/Input.jsx"
+  "code_path": "/public/components_code/input/Input.jsx"
 },{
   "_id": {
     "$oid": "636c3f1d5f2c95c273e877cd"
@@ -36,7 +36,7 @@
   "name": "Navbar",
   "thumbnail": "/img/D&M.webp",
   "description": "Navbar Component description",
-  "code_path": "/public/compoments_code/navbar/Navbar.jsx"
+  "code_path": "/public/components_code/navbar/Navbar.jsx"
 },{
   "_id": {
     "$oid": "636c3f1f5f2c95c273e877ce"
@@ -49,5 +49,5 @@
   "name": "Taskbar",
   "thumbnail": "/img/D&M.webp",
   "description": "Taskbar Component description",
-  "code_path": "/public/compoments_code/taskabra/Taskbar.jsx"
+  "code_path": "/public/components_code/taskabra/Taskbar.jsx"
 }]

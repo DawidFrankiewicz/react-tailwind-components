@@ -44,7 +44,7 @@ export default function componentDetailsDisplay() {
 							<code>
 								<embed
 									type="text/html"
-									src="/public/compoments_code/button/Button.jsx"
+									src={componentData.code_path}
 								></embed>
 							</code>
 						</pre>
