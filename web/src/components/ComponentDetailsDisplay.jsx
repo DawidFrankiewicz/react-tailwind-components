@@ -38,11 +38,11 @@ export default function componentDetailsDisplay() {
 							{componentData.description}
 						</span>
 					</p>
-					<div>
+					<div className="bg-blue-50 p-2 rounded-lg">
 						CODE CONTENT:
-						<code className="bg-blue-50 p-2 rounded-lg ">
-							{componentData.code}
-						</code>
+						<pre>
+							<code>{componentData.code}</code>
+						</pre>
 					</div>
 				</>
 			)}
