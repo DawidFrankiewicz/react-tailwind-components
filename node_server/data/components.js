@@ -5,6 +5,7 @@ const router = express.Router();
 const url = "mongodb://127.0.0.1:27017";
 const client = new MongoClient(url);
 const dbName = "react-tailwind-components";
+const collectionName = "components";
 
 router.get("/", async (req, res) => {
 	const components = await loadComponentsCollection();
@@ -36,7 +37,7 @@ async function loadComponentsCollection() {
 		return false;
 	} finally {
 		console.log("Connected successfully to server");
-		return client.db("react-tailwind-components").collection("components");
+		return client.db(dbName).collection(collectionName);
 	}
 }
 
