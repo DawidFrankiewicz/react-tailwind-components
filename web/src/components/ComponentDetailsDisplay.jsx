@@ -41,7 +41,7 @@ export default function componentDetailsDisplay() {
 					<div className="bg-blue-50 p-2 rounded-lg">
 						CODE CONTENT:
 						<pre>
-							<code>{componentData.code}</code>
+							<code>{componentData.code_path}</code>
 						</pre>
 					</div>
 				</>
