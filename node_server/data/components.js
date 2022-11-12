@@ -7,13 +7,16 @@ const client = new MongoClient(url);
 const dbName = "react-tailwind-components";
 
 router.get("/", async (req, res) => {
-	const components = await loadComponentsCollection();
-	if (components) {
-		res.send(await components.find({}).toArray());
-		client.close();
-	} else {
-		res.send("Error connecting to MongoDB");
-	}
+	// Timeout for testing
+	setTimeout(async () => {
+		const components = await loadComponentsCollection();
+		if (components) {
+			res.send(await components.find({}).toArray());
+			client.close();
+		} else {
+			res.send("Error connecting to MongoDB");
+		}
+	}, 1500);
 });
 
 async function loadComponentsCollection() {
