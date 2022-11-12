@@ -12,4 +12,4 @@ npm run dev
 ```
 
 Make sure to run the MongoDB (mongod) server first to make website work.
-Import sample data from data folder to your database - [components](./components.json)
+Import sample data into 'react-tailwind-components' database from node_server/data folder to your database - [components](./components.json)
