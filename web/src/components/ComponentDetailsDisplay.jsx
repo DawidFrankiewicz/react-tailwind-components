@@ -41,7 +41,12 @@ export default function componentDetailsDisplay() {
 					<div className="bg-blue-50 p-2 rounded-lg">
 						CODE CONTENT:
 						<pre>
-							<code>{componentData.code_path}</code>
+							<code>
+								<embed
+									type="text/html"
+									src="/public/compoments_code/button/Button.jsx"
+								></embed>
+							</code>
 						</pre>
 					</div>
 				</>
