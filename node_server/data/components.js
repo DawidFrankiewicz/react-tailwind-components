@@ -21,6 +21,7 @@ router.get("/:id", async (req, res) => {
 	const components = await loadComponentsCollection();
 	if (components) {
 		res.send(await components.findOne(objectId));
+		client.close();
 	} else {
 		res.send("Error connecting to MongoDB");
 	}
