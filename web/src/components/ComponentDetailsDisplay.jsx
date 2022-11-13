@@ -41,7 +41,10 @@ export default function componentDetailsDisplay() {
 					<div className="bg-blue-50 p-2 rounded-lg">
 						CODE CONTENT:
 						<pre>
-							<code>{componentData.code_path}</code>
+							<embed
+								style={{ width: '100%', height: '100%' }}
+								src={componentData.code_path}
+							></embed>
 						</pre>
 					</div>
 				</>
