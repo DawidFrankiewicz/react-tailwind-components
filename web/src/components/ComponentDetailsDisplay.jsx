@@ -61,7 +61,7 @@ export default function componentDetailsDisplay() {
 								type="copy"
 								className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
 							>
-								Kopiuj
+								Copy Code
 							</button>
 						</CopyToClipboard>
 					</div>
@@ -70,4 +70,3 @@ export default function componentDetailsDisplay() {
 		</div>
 	);
 }
-//copy {componentCode} to clipboard
