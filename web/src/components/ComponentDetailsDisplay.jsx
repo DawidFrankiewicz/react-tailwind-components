@@ -1,11 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getComponentsData } from '../database/mongodb.js';
+import Highlight from 'react-highlight';
+import 'highlight.js/styles/github.css';
 
 export default function componentDetailsDisplay() {
 	const [isLoading, setIsLoading] = useState(true);
 	const [componentData, setComponentData] = useState({});
-	// TODO pass data from ComponentsGrid.jsx to ComponentDetails.jsx via router, still load from db if no data passed
+	const [componentCode, setComponentCode] = useState('');
+	// TODO pass data from ComponentsGrid.jsx to ComponentDetails.jsx via router, still load from db if no data passe
 
 	const { id } = useParams();
 	useEffect(() => {
@@ -13,6 +16,11 @@ export default function componentDetailsDisplay() {
 			// Not found error handling
 			if (!data) return (window.location.href = '/NotFound');
 			setComponentData(data);
+			fetch(`..${data.code_path}`)
+				.then((response) => response.text())
+				.then((data) => {
+					setComponentCode(data);
+				});
 			setIsLoading(!isLoading);
 		});
 	}, []);
@@ -38,16 +46,11 @@ export default function componentDetailsDisplay() {
 							{componentData.description}
 						</span>
 					</p>
-					<div className="bg-blue-50 p-2 rounded-lg">
+					<div className="">
 						CODE CONTENT:
-						<pre>
-							<code>
-								<embed
-									type="text/html"
-									src={componentData.code_path}
-								></embed>
-							</code>
-						</pre>
+						<Highlight className="language-javascript bg-blue-50 p-2 rounded-lg">
+							{componentCode}
+						</Highlight>
 					</div>
 				</>
 			)}
