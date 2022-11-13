@@ -47,10 +47,8 @@ export default function componentDetailsDisplay() {
 						</span>
 					</p>
 					<div className="">
-						<text>
-							<br />
-							CODE CONTENT:
-						</text>
+						<br />
+						CODE CONTENT:
 						<Highlight className="language-javascript bg-blue-50 p-2 rounded-lg">
 							{componentCode}
 						</Highlight>
