@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { getComponentsData } from '../database/mongodb.js';
 import Highlight from 'react-highlight';
 import 'highlight.js/styles/github.css';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 export default function componentDetailsDisplay() {
 	const [isLoading, setIsLoading] = useState(true);
@@ -49,9 +50,18 @@ export default function componentDetailsDisplay() {
 					<div className="">
 						<br />
 						CODE CONTENT:
-						<Highlight className="language-javascript bg-blue-50 p-2 rounded-lg">
+						<Highlight
+							className="language-javascript bg-blue-50 p-2 rounded-lg"
+							id="copy-code"
+						>
 							{componentCode}
 						</Highlight>
+						<button
+							type="copy"
+							className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+						>
+							Kopiuj
+						</button>
 					</div>
 				</>
 			)}
