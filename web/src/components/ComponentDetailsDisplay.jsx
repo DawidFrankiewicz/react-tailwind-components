@@ -1,10 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getComponentsData } from '../database/mongodb.js';
-import Highlight from 'react-highlight';
-import 'highlight.js/styles/github.css';
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-
 export default function componentDetailsDisplay() {
 	const [isLoading, setIsLoading] = useState(true);
 	const [componentData, setComponentData] = useState({});
@@ -49,9 +48,13 @@ export default function componentDetailsDisplay() {
 					</p>
 					<div>
 						<p>CODE CONTENT:</p>
-						<Highlight className="language-javascript bg-blue-50 p-2 rounded-lg">
+						<SyntaxHighlighter
+							language="jsx"
+							className="my-5"
+							style={docco}
+						>
 							{componentCode}
-						</Highlight>
+						</SyntaxHighlighter>
 						<CopyToClipboard text={componentCode}>
 							<button
 								type="copy"
