@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { getComponentsData } from '../database/mongodb.js';
 
-function ComponentsGrid() {
+export default function ComponentsGrid() {
 	const [error, setError] = useState(false);
 	const [isLoading, setIsLoading] = useState(true);
 	// components data array
@@ -71,5 +71,3 @@ function ComponentsGrid() {
 		</div>
 	);
 }
-
-export default ComponentsGrid;

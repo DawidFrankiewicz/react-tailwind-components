@@ -4,6 +4,7 @@ import { getComponentsData } from '../database/mongodb.js';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+
 export default function componentDetailsDisplay() {
 	const [isLoading, setIsLoading] = useState(true);
 	const [componentData, setComponentData] = useState({});
