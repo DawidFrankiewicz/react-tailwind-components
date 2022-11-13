@@ -9,6 +9,7 @@ export default function componentDetailsDisplay() {
 	const [isLoading, setIsLoading] = useState(true);
 	const [componentData, setComponentData] = useState({});
 	const [componentCode, setComponentCode] = useState('');
+	// const [extraComponent, setExtraComponent] = useState('');
 	// TODO pass data from ComponentsGrid.jsx to ComponentDetails.jsx via router, still load from db if no data passe
 
 	const { id } = useParams();
@@ -16,15 +17,17 @@ export default function componentDetailsDisplay() {
 		getComponentsData(id).then((data) => {
 			// Not found error handling
 			if (!data) return (window.location.href = '/NotFound');
+			getCodeFromFile(data);
 			setComponentData(data);
-			fetch(`..${data.code_path}`)
-				.then((response) => response.text())
-				.then((data) => {
-					setComponentCode(data);
-				});
 			setIsLoading(!isLoading);
 		});
 	}, []);
+
+	async function getCodeFromFile(data) {
+		const response = await fetch(`..${data.code_path}`);
+		const code = await response.text();
+		setComponentCode(code);
+	}
 
 	return (
 		<div className="container mx-auto px-2">
@@ -47,24 +50,33 @@ export default function componentDetailsDisplay() {
 							{componentData.description}
 						</span>
 					</p>
-					<div>
-						<p>CODE CONTENT:</p>
-						<SyntaxHighlighter
-							language="jsx"
-							className="my-5"
-							style={docco}
-						>
-							{componentCode}
-						</SyntaxHighlighter>
-						<CopyToClipboard text={componentCode}>
-							<button
-								type="copy"
-								className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+					{componentCode ? (
+						<div>
+							<p>Source Code</p>
+							<SyntaxHighlighter
+								language="jsx"
+								className="my-5"
+								style={docco}
 							>
-								Copy Code
-							</button>
-						</CopyToClipboard>
-					</div>
+								{componentCode}
+							</SyntaxHighlighter>
+							<CopyToClipboard text={componentCode}>
+								<button
+									type="copy"
+									className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+								>
+									Copy Code
+								</button>
+							</CopyToClipboard>
+						</div>
+					) : (
+						<div className="flex flex-col w-full justify-center items-center my-14">
+							<div className="animate-spin rounded-full h-32 w-32 border-b-4 border-react-blue"></div>
+							<p className="mt-4 text-lg font-bold animate-pulse">
+								Loading Code
+							</p>
+						</div>
+					)}
 				</main>
 			)}
 		</div>
