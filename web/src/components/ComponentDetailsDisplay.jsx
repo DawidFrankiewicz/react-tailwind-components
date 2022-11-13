@@ -56,15 +56,18 @@ export default function componentDetailsDisplay() {
 						>
 							{componentCode}
 						</Highlight>
-						<button
-							type="copy"
-							className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-						>
-							Kopiuj
-						</button>
+						<CopyToClipboard text={componentCode}>
+							<button
+								type="copy"
+								className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+							>
+								Kopiuj
+							</button>
+						</CopyToClipboard>
 					</div>
 				</>
 			)}
 		</div>
 	);
 }
+//copy {componentCode} to clipboard
