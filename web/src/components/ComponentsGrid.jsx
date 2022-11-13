@@ -24,7 +24,7 @@ function ComponentsGrid() {
 	};
 
 	return (
-		<>
+		<div className="container mx-auto">
 			{error && (
 				<div className="flex justify-center items-center my-14">
 					<h1 className="text-red-600 text-2xl font-bold">
@@ -68,7 +68,7 @@ function ComponentsGrid() {
 					</main>
 				)
 			)}
-		</>
+		</div>
 	);
 }
 

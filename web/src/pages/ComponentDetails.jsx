@@ -1,9 +1,13 @@
 import ComponentDetailsDisplay from '../components/ComponentDetailsDisplay.jsx';
+import Header from '../components/Header.jsx';
+import Footer from '../components/Footer.jsx';
 
 export default function componentDetails() {
 	return (
-		<div className="container mx-auto">
+		<>
+			<Header />
 			<ComponentDetailsDisplay />
-		</div>
+			<Footer />
+		</>
 	);
 }

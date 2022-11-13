@@ -26,13 +26,13 @@ export default function componentDetailsDisplay() {
 	}, []);
 
 	return (
-		<div>
+		<div className="container mx-auto px-2">
 			{isLoading ? (
 				<div className="flex justify-center items-center my-14">
 					<div className="animate-spin rounded-full h-32 w-32 border-b-4 border-react-blue"></div>
 				</div>
 			) : (
-				<>
+				<main className="my-14">
 					<h1 className="font-bold text-red-600">
 						{componentData.name}
 					</h1>
@@ -47,15 +47,15 @@ export default function componentDetailsDisplay() {
 						</span>
 					</p>
 					<div className="">
-						<text>
+						<p>
 							<br />
 							CODE CONTENT:
-						</text>
+						</p>
 						<Highlight className="language-javascript bg-blue-50 p-2 rounded-lg">
 							{componentCode}
 						</Highlight>
 					</div>
-				</>
+				</main>
 			)}
 		</div>
 	);

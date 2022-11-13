@@ -5,10 +5,8 @@ import ComponentsGrid from '../components/ComponentsGrid.jsx';
 function App() {
 	return (
 		<div className="App">
-			<div className="container mx-auto px-2">
-				<Header />
-				<ComponentsGrid />
-			</div>
+			<Header />
+			<ComponentsGrid />
 			<Footer />
 		</div>
 	);
