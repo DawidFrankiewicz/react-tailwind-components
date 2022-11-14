@@ -1,0 +1,15 @@
+General features:
+    ☐ Components categories / tags
+    ☐ Components filters
+    ☐ Load more components on scroll ex. 12 at a time / This will prevent performance issues
+    ☐ Select primary and secondary colors for components in detail view + save/load to/from local storage
+       Build components with this in mind
+    ☐ Dark mode switch
+       ☐ Dark mode for page
+       ☐ Dark mode for components
+
+Improvements for exiting features:
+
+Known Bugs:
+
+Performance issues:
