@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useLocation } from 'react-router-dom';
 import { getComponentsData } from '../database/mongodb.js';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { docco } from 'react-syntax-highlighter/dist/esm/styles/hljs';
@@ -9,27 +9,41 @@ export default function componentDetailsDisplay() {
 	const [isLoading, setIsLoading] = useState(true);
 	const [componentData, setComponentData] = useState({});
 	const [componentCode, setComponentCode] = useState('');
-	// TODO pass data from ComponentsGrid.jsx to ComponentDetails.jsx via router, still load from db if no data passe
 
 	// Get component id from url
 	const { id } = useParams();
+	// Get passed data from ComponentsGrid.jsx using Link
+	const locationProps = useLocation().state;
 
 	useEffect(() => {
-		// Get component data from db by Id passed
-		getComponentsData(id).then((data) => {
-			// Not found error handling
-			if (!data) return (window.location.href = '/NotFound');
-			// If code path exists, load code from file
-			if (data.code_path) {
-				getCodeFromFile(data.code_path);
+		// If data was passed from ComponentsGrid.jsx, use that data
+		if (locationProps) {
+			setComponentData(locationProps);
+			setIsLoading(!isLoading);
+			if (locationProps.code_path) {
+				getCodeFromFile(locationProps.code_path);
 			} else {
 				setComponentCode(null);
 			}
-			// Set component data
-			setComponentData(data);
-			// Stop loading animation, display component
-			setIsLoading(!isLoading);
-		});
+		}
+		// else get data from db
+		else {
+			// Get component data from db by Id passed
+			getComponentsData(id).then((data) => {
+				// Not found error handling
+				if (!data) return (window.location.href = '/NotFound');
+				// Set component data
+				setComponentData(data);
+				// Stop loading animation, display component
+				setIsLoading(!isLoading);
+				// If code path exists, load code from file
+				if (data.code_path) {
+					getCodeFromFile(data.code_path);
+				} else {
+					setComponentCode(null);
+				}
+			});
+		}
 	}, []);
 
 	// Fetch code from file
