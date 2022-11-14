@@ -10,6 +10,8 @@ General features:
 
 Improvements for exiting features:
     ☐ Add "code coppied" small popup when clicking on Copy code button
+    ☐ Add redux for state management
+        ☐ use redux to store homepage components data and filters state
 
 Known Bugs:
 
