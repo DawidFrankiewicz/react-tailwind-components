@@ -1,5 +1,5 @@
 # NodeJS Server
-This is a simple NodeJS server that can be used to database data.
+This is a simple NodeJS server that handles database data operations.
 
 ## Quick start
 
@@ -11,6 +11,6 @@ npm install
 npm run dev
 ```
 
-Make sure to run the MongoDB (mongod) server first to make website work.
-Import sample data into 'react-tailwind-components' database from folder - [components](./components.json) - to your database
+Make sure to run the MongoDB (mongod) server first to make dev website work.
+Import sample data into 'react-tailwind-components' database to 'components' collection - from file - [components](./components.json) - to your database
 
