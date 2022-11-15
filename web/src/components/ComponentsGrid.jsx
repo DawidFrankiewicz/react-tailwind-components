@@ -1,23 +1,31 @@
 import { useState, useEffect } from 'react';
-import { getComponentsData } from '../database/mongodb.js';
+// import { getComponentsData } from '../database/mongodb.js';
 import { Link } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { loadComponents } from '../actions/components.js';
 
 export default function ComponentsGrid() {
 	const [error, setError] = useState(false);
 	const [isLoading, setIsLoading] = useState(true);
-	const [componentsData, setComponentsData] = useState([]);
+	// const [componentsData, setComponentsData] = useState([]);
+
+	const componentsData = useSelector((state) => state);
+	const dispatch = useDispatch();
 
 	useEffect(() => {
+		loadComponents(dispatch('loadComponents'));
+		console.log(componentsData);
+		setIsLoading(false);
 		// Get all components from db
-		getComponentsData()
-			.then((data) => {
-				setComponentsData(data);
-				setIsLoading(!isLoading);
-			})
-			.catch((err) => {
-				setError(err);
-				console.error(err);
-			});
+		// getComponentsData()
+		// 	.then((data) => {
+		// 		setComponentsData(data);
+		// 		setIsLoading(!isLoading);
+		// 	})
+		// 	.catch((err) => {
+		// 		setError(err);
+		// 		console.error(err);
+		// 	});
 	}, []);
 
 	return (
